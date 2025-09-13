@@ -63,7 +63,7 @@
     </nav>
 
 
-
+<div id="resume-content">
     <div class="card mt-5 text-light" style="max-width: 100;">
         <div class="card-header mt-5 pt-5 text-center" style="background-color: whitesmoke; color: dark;">
             <h5 class="text-dark fw-bold">ATUSASIIRE DAREN CARED</h5>
@@ -129,10 +129,12 @@
                 <li>YMCA (Computer Science)</li>
                 <li>Tel: 0774322138</li>
             </ul>
+            </div>
 
-            <a href="resume/resume.pdf" class="btn btn-primary btn-lg" download="Atusasiire_Resume.pdf">
-                <i class="bi bi-download"></i> Download as PDF
-            </a>
+          <a href="#" class="btn btn-primary btn-lg" onclick="downloadResume()">
+  <i class="bi bi-download"></i> Download as PDF
+</a>
+
 
 
 
@@ -240,7 +242,22 @@
     </div>
 
 
+<script>
+  function downloadResume() {
+    const element = document.getElementById('resume-content'); 
+    const options = {
+      margin:       0.5,
+      filename:     'Atusasiire_Resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
 
+    html2pdf().set(options).from(element).save();
+  }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
